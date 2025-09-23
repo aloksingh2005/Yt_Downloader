@@ -39,7 +39,7 @@ class SocialMediaDownloader(ctk.CTk):
         # Supported platforms info
         info_label = ctk.CTkLabel(
             self,
-            text="Supports: YouTube, Instagram, Facebook",
+            text="Supports: YouTube, Instagram, Facebook (up to 4K/2160p)",
             font=ctk.CTkFont(size=12)
         )
         info_label.pack(pady=(0, 15))
@@ -57,10 +57,8 @@ class SocialMediaDownloader(ctk.CTk):
         self.url_textbox = ctk.CTkTextbox(url_frame, height=120, width=580)
         self.url_textbox.insert(
             "0.0",
-            "Paste URLs here (one per line)...\n\nExamples:\n"
+            "What Do You Want to Download?\n\nExamples:\n"
             "https://www.instagram.com/p/xyz123/\n"
-            "https://www.facebook.com/watch/?v=123456789\n"
-            "https://www.youtube.com/watch?v=abc123"
         )
         self.url_textbox.bind("<FocusIn>", self.clear_placeholder)
         self.url_textbox.pack(pady=(5, 15), padx=15)
@@ -100,7 +98,7 @@ class SocialMediaDownloader(ctk.CTk):
         ctk.CTkLabel(quality_frame, text="Quality/Resolution:").pack(pady=(5, 0))
 
         self.quality_var = ctk.StringVar(value="best")
-        quality_options = ["best", "1080p", "720p", "480p", "360p", "240p", "144p"]
+        quality_options = ["best", "2160p", "1080p", "720p", "480p", "360p", "240p", "144p"]
         self.quality_menu = ctk.CTkOptionMenu(
             quality_frame,
             values=quality_options,
